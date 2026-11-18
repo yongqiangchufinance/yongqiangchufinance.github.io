@@ -22,4 +22,4 @@ A one-page site, with no build step. All files live in this folder:
 2. **University web space**, if Belk College offers faculty pages that accept HTML uploads.
 3. **Stay on Google Sites.** It cannot host this file directly. You can rebuild the same structure there with its own blocks, but the topic filter and the layout control will not carry over.
 
-The site is live at https://yongqiangchu-417.github.io (repository `yongqiangchu-417/yongqiangchu-417.github.io`). The CV sources in `Apps/Overleaf/CV` and the old Google Site point here.
+The site is live at https://yongqiangchufinance.github.io (repository `yongqiangchufinance/yongqiangchufinance.github.io`, in the free `yongqiangchufinance` GitHub organization owned by your personal account). The CV sources in `Apps/Overleaf/CV` and the old Google Site point here.
