@@ -10,11 +10,11 @@ A one-page site, with no build step. All files live in this folder:
 
 ## Updating
 
-- **New working paper:** copy any `<li class="paper" ...>` block under `id="wp-list"` and edit it. The `data-topics` attribute controls which topic chips match it. Use any of `banking housing politics corporate inequality climate ai pricing`.
+- **New working paper:** copy any `<li class="paper" ...>` block under `id="wp-list"` and edit it. (The `data-topics` attributes are left over from a removed topic filter and do nothing now.)
 - **Paper accepted:** move its block to `pub-top` or `pub-other`, add `data-year="2026"` (or `"forthcoming"`), and put the year in the `<div class="gutter">`. Keep each list sorted newest first.
 - **R&R status:** put it in the gutter, e.g. `<div class="gutter status">R&amp;R · JFQA</div>`.
 - **New CV:** overwrite `cv.pdf`, then update the month in the CV button text ("November 2026").
-- Update the counts in the headings (17 / 36 / 11 / 25) when you add papers. The script corrects them on load, but search engines read the HTML.
+- Update the counts in the headings (17 / 36 / 11 / 25) when you add papers.
 
 ## Hosting options
 

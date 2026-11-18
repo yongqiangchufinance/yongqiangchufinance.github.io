@@ -8,7 +8,6 @@
 <meta property="og:title" content="Yongqiang Chu">
 <meta property="og:description" content="Childress Klein Distinguished Professor of Finance, UNC Charlotte. Research on corporate finance, banking, and real estate.">
 <meta property="og:type" content="profile">
-<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
@@ -217,46 +216,8 @@ h3 {
 .count { font: 400 0.8125rem/1 var(--font-mono); color: var(--muted); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
 .lede { color: var(--muted); max-width: 40rem; }
 
-/* ---------- Filters ---------- */
-.filters { display: none; }
-.js .filters {
-  display: grid; gap: 0.75rem; position: sticky; top: calc(var(--bar-h) + env(safe-area-inset-top, 0px)); z-index: 10;
-  background: var(--paper); padding-block: 0.9rem; border-bottom: 1px solid var(--rule);
-  margin-bottom: 0.5rem;
-}
-.filter-row { display: flex; gap: 0.75rem 1rem; align-items: center; flex-wrap: wrap; }
-.search { position: relative; flex: 1 1 16rem; max-width: 24rem; }
-.search svg { position: absolute; left: 0.7rem; top: 50%; width: 1rem; height: 1rem; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-.search input {
-  width: 100%; font: 400 0.9375rem/1.2 var(--font-body); color: var(--ink);
-  background: var(--panel); border: 1px solid transparent; border-radius: 3px;
-  padding: 0.6rem 0.75rem 0.6rem 2.1rem;
-}
-.search input::placeholder { color: var(--muted); }
-.search input:focus { outline: none; border-color: var(--pine); background: var(--paper); }
-.filter-status { font: 400 0.8125rem/1.3 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.reset {
-  font: 500 0.8125rem/1 var(--font-body); color: var(--pine); background: none; border: 0;
-  padding: 0.35rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.2em;
-}
-.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.chip {
-  font: 500 0.8125rem/1 var(--font-body); color: var(--ink); background: transparent;
-  border: 1px solid var(--rule); border-radius: 999px; padding: 0.42rem 0.75rem; cursor: pointer;
-  display: inline-flex; gap: 0.4rem; align-items: baseline;
-}
-.chip .n { font: 400 0.71875rem/1 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.chip:hover { border-color: var(--pine); }
-.chip[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: var(--pine-ink); }
-.chip[aria-pressed="true"] .n { color: inherit; opacity: 0.8; }
-/* While the filter bar is sticky, anchors inside the list must clear it too. */
-.js #working-papers, .js #publications { scroll-margin-top: 8.5rem; }
-@media (max-width: 720px) {
-  .js .filters { position: static; }
-  .js #working-papers, .js #publications { scroll-margin-top: 0; }
-}
-
 /* ---------- Paper ledger ---------- */
+.library > h3:first-child { margin-top: 0; }
 .papers { list-style: none; margin: 0; padding: 0; }
 .paper {
   display: grid; grid-template-columns: 6.75rem minmax(0, 1fr); gap: 0 1.5rem;
@@ -293,7 +254,6 @@ h3 {
 .links a:hover { border-color: var(--pine); color: var(--pine); }
 .links a.listen { color: var(--pine); background: var(--pine-soft); border-color: transparent; }
 .links svg { width: 0.75rem; height: 0.75rem; flex: none; }
-.empty { padding-block: 1rem; color: var(--muted); font-style: italic; }
 
 @media (max-width: 640px) {
   .paper { grid-template-columns: 1fr; }
@@ -409,33 +369,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
     <section class="section" id="research" aria-labelledby="research-h">
       <div class="section-head">
         <h2 id="research-h">Research</h2>
-        <p class="lede">Working papers first, then published work. Search or pick a topic to narrow both lists.</p>
       </div>
 
       <div class="library">
-        <div class="filters" role="search" aria-label="Filter papers">
-          <div class="filter-row">
-            <div class="search">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.75"/><path d="m10.5 10.5 3.75 3.75"/></svg>
-              <label class="sr-only" for="q">Search papers</label>
-              <input id="q" type="search" placeholder="Search titles, coauthors, journals" autocomplete="off">
-            </div>
-            <p class="filter-status" id="filter-status" aria-live="polite"></p>
-            <button class="reset" id="reset" type="button" hidden>Clear filters</button>
-          </div>
-          <div class="chips" id="chips">
-            <button class="chip" type="button" data-topic="all" aria-pressed="true">All topics <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="banking" aria-pressed="false">Banking &amp; credit <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="housing" aria-pressed="false">Mortgages &amp; housing <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="politics" aria-pressed="false">Politics &amp; culture <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="corporate" aria-pressed="false">Corporate finance <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="inequality" aria-pressed="false">Discrimination &amp; diversity <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="climate" aria-pressed="false">Climate &amp; ESG <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="ai" aria-pressed="false">AI &amp; fintech <span class="n"></span></button>
-            <button class="chip" type="button" data-topic="pricing" aria-pressed="false">Asset pricing <span class="n"></span></button>
-          </div>
-        </div>
-
         <h3 id="working-papers">Working papers <span class="count" data-count-for="wp-list">17</span></h3>
         <ol class="papers" id="wp-list">
 
@@ -619,7 +555,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
             </div>
           </li>
         </ol>
-        <p class="empty" data-empty-for="wp-list" hidden>No working papers match.</p>
 
         <!-- ===================== PUBLICATIONS ===================== -->
         <h2 id="publications" style="margin-top:3.5rem">Publications <span class="count" data-count-total>36</span></h2>
@@ -767,7 +702,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
             </div>
           </li>
         </ol>
-        <p class="empty" data-empty-for="pub-top" hidden>No papers in this group match.</p>
 
         <h3>Other peer-reviewed journals <span class="count" data-count-for="pub-other">25</span></h3>
         <ol class="papers" id="pub-other">
@@ -1025,7 +959,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
             </div>
           </li>
         </ol>
-        <p class="empty" data-empty-for="pub-other" hidden>No papers in this group match.</p>
       </div>
     </section>
 
@@ -1126,71 +1059,15 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
 </footer>
 
 <script>
-(function () {
-  var items = Array.prototype.slice.call(document.querySelectorAll('.paper[data-topics]'));
-  var lists = Array.prototype.slice.call(document.querySelectorAll('ol.papers'));
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-topic]'));
-  var input = document.getElementById('q');
-  var status = document.getElementById('filter-status');
-  var reset = document.getElementById('reset');
-  var topic = 'all';
-
-  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
-  function topicsOf(li) { return li.getAttribute('data-topics').split(/\s+/); }
-
-  items.forEach(function (li) { li._text = norm(li.textContent); });
-
-  chips.forEach(function (chip) {
-    var t = chip.getAttribute('data-topic');
-    var n = t === 'all' ? items.length : items.filter(function (li) { return topicsOf(li).indexOf(t) !== -1; }).length;
-    var slot = chip.querySelector('.n');
-    if (slot) slot.textContent = n;
+/* Show each publication year once: later papers from the same year leave the gutter blank. */
+document.querySelectorAll('ol.papers').forEach(function (list) {
+  var prev = null;
+  Array.prototype.forEach.call(list.children, function (li) {
+    var y = li.getAttribute('data-year');
+    if (y && y === prev) li.classList.add('repeat');
+    prev = y;
   });
-
-  function apply() {
-    var term = norm(input.value.trim());
-    var shown = 0;
-    items.forEach(function (li) {
-      var ok = (topic === 'all' || topicsOf(li).indexOf(topic) !== -1) && (!term || li._text.indexOf(term) !== -1);
-      li.hidden = !ok;
-      if (ok) shown++;
-    });
-    lists.forEach(function (list) {
-      var all = Array.prototype.slice.call(list.children);
-      var vis = all.filter(function (li) { return !li.hidden; });
-      var count = document.querySelector('[data-count-for="' + list.id + '"]');
-      if (count) count.textContent = vis.length === all.length ? all.length : vis.length + ' of ' + all.length;
-      var empty = document.querySelector('[data-empty-for="' + list.id + '"]');
-      if (empty) empty.hidden = vis.length > 0;
-      var prev = null;
-      vis.forEach(function (li) {
-        var y = li.getAttribute('data-year');
-        li.classList.toggle('repeat', !!y && y === prev);
-        prev = y;
-      });
-    });
-    var filtered = topic !== 'all' || term !== '';
-    status.textContent = filtered ? shown + ' of ' + items.length + ' papers' : items.length + ' papers';
-    reset.hidden = !filtered;
-  }
-
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      topic = chip.getAttribute('data-topic');
-      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
-      apply();
-    });
-  });
-  input.addEventListener('input', apply);
-  reset.addEventListener('click', function () {
-    input.value = '';
-    topic = 'all';
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-topic') === 'all')); });
-    apply();
-    input.focus();
-  });
-  apply();
-})();
+});
 </script>
 </body>
 </html>
