@@ -149,7 +149,6 @@ p { margin: 0; }
   .brand { display: none; }
   .topbar .wrap { justify-content: flex-start; }
   .nav { gap: 1.1rem; }
-  .nav-long { display: none; }
 }
 
 /* ---------- Intro ---------- */
@@ -283,13 +282,6 @@ h3 {
 .track-meta { display: block; margin-top: 0.2rem; font-size: 0.8125rem; color: var(--muted); }
 @media (max-width: 640px) { .tracks { grid-template-columns: 1fr; } }
 
-/* ---------- CV & contact ---------- */
-.contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
-.contact-grid h3 { margin-top: 0; margin-bottom: 0.75rem; }
-.contact-grid p + p { margin-top: 0.75rem; }
-address { font-style: normal; }
-.email { font: 500 1rem/1.4 var(--font-mono); word-break: break-all; }
-@media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
 
 footer { border-top: 1px solid var(--rule); padding-block: 1.75rem 2.5rem; font-size: 0.8125rem; color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
@@ -304,7 +296,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#audio">Audio</a>
-      <a class="nav-cv" href="#cv">CV<span class="nav-long"> &amp; contact</span></a>
+      <a class="nav-cv" href="cv.pdf">CV</a>
     </nav>
   </div>
 </header>
@@ -1010,33 +1002,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
           <span><span class="track-title">Shareholder-Creditor Conflict and Payout Policy</span><span class="track-meta">Review of Financial Studies, 2018</span></span>
         </a></li>
       </ul>
-    </section>
-
-    <!-- ===================== CV & CONTACT ===================== -->
-    <section class="section" id="cv" aria-labelledby="cv-h">
-      <div class="section-head">
-        <h2 id="cv-h">CV &amp; contact</h2>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <h3>Curriculum vitae</h3>
-          <p>Employment, publications, presentations, students, and service.</p>
-          <p><a class="btn btn-primary" href="cv.pdf">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 1.75h5.5L13 5.25v9H4z"/><path d="M9.25 1.75v3.75H13"/><path d="M6.25 9h4.5M6.25 11.5h4.5"/></svg>
-            Download CV (PDF, November 2026)
-          </a></p>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <p class="email"><a href="mailto:yongqiang.chu@uncc.edu">yongqiang.chu@uncc.edu</a></p>
-          <address>
-            <p>Belk College of Business<br>
-            University of North Carolina at Charlotte<br>
-            9201 University City Blvd<br>
-            Charlotte, NC 28223</p>
-          </address>
-        </div>
-      </div>
     </section>
 
   </div>
