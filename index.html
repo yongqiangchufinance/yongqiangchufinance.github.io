@@ -213,7 +213,6 @@ h3 {
   margin: 2.5rem 0 0.25rem; font: 600 0.78125rem/1.4 var(--font-mono); text-transform: uppercase;
   letter-spacing: 0.09em; color: var(--muted); display: flex; gap: 0.6rem; align-items: baseline;
 }
-.count { font: 400 0.8125rem/1 var(--font-mono); color: var(--muted); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
 .lede { color: var(--muted); max-width: 40rem; }
 
 /* ---------- Paper ledger ---------- */
@@ -276,13 +275,6 @@ h3 {
 .track-meta { display: block; margin-top: 0.2rem; font-size: 0.8125rem; color: var(--muted); }
 @media (max-width: 640px) { .tracks { grid-template-columns: 1fr; } }
 
-/* ---------- Students ---------- */
-.students { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; }
-.students li { border-top: 1px solid var(--rule); padding-block: 0.8rem; display: grid; gap: 0.1rem; }
-.students strong { font-weight: 600; }
-.students span { font-size: 0.9375rem; color: var(--muted); }
-@media (max-width: 640px) { .students { grid-template-columns: 1fr; } }
-
 /* ---------- CV & contact ---------- */
 .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
 .contact-grid h3 { margin-top: 0; margin-bottom: 0.75rem; }
@@ -304,7 +296,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#audio">Audio</a>
-      <a href="#students">Students</a>
       <a class="nav-cv" href="#cv">CV<span class="nav-long"> &amp; contact</span></a>
     </nav>
   </div>
@@ -372,7 +363,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
       </div>
 
       <div class="library">
-        <h3 id="working-papers">Working papers <span class="count" data-count-for="wp-list">17</span></h3>
+        <h3 id="working-papers">Working papers</h3>
         <ol class="papers" id="wp-list">
 
           <li class="paper" data-topics="politics climate">
@@ -557,9 +548,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
         </ol>
 
         <!-- ===================== PUBLICATIONS ===================== -->
-        <h2 id="publications" style="margin-top:3.5rem">Publications <span class="count" data-count-total>36</span></h2>
+        <h2 id="publications" style="margin-top:3.5rem">Publications</h2>
 
-        <h3>UTD 24 / FT 50 journals <span class="count" data-count-for="pub-top">11</span></h3>
+        <h3>UTD 24 / FT 50 journals</h3>
         <ol class="papers" id="pub-top">
 
           <li class="paper" data-topics="banking housing" data-year="forthcoming">
@@ -703,7 +694,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
           </li>
         </ol>
 
-        <h3>Other peer-reviewed journals <span class="count" data-count-for="pub-other">25</span></h3>
+        <h3>Other peer-reviewed journals</h3>
         <ol class="papers" id="pub-other">
 
           <li class="paper" data-topics="ai" data-year="forthcoming">
@@ -965,7 +956,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
     <!-- ===================== AUDIO ===================== -->
     <section class="section" id="audio" aria-labelledby="audio-h">
       <div class="section-head">
-        <h2 id="audio-h">Audio overviews <span class="count">8</span></h2>
+        <h2 id="audio-h">Audio overviews</h2>
         <p class="lede">AI-generated audio summaries of selected papers, for listening on a commute. Each one opens in Google Drive.</p>
       </div>
       <ul class="tracks">
@@ -1001,23 +992,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-conte
           <span class="play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1v10l8.5-5z" fill="currentColor"/></svg></span>
           <span><span class="track-title">Shareholder-Creditor Conflict and Payout Policy</span><span class="track-meta">Review of Financial Studies, 2018</span></span>
         </a></li>
-      </ul>
-    </section>
-
-    <!-- ===================== STUDENTS ===================== -->
-    <section class="section" id="students" aria-labelledby="students-h">
-      <div class="section-head">
-        <h2 id="students-h">Ph.D. students advised</h2>
-        <p class="lede">With first academic placement.</p>
-      </div>
-      <ul class="students">
-        <li><strong>Liying Wang</strong><span>University of Nebraska–Lincoln</span></li>
-        <li><strong>Chia-Chun (Cici) Chiang</strong><span>University of Texas at El Paso</span></li>
-        <li><strong>Gerard Pinto</strong><span>Drew University</span></li>
-        <li><strong>Jin Cai</strong><span>Sacred Heart University</span></li>
-        <li><strong>Yafei Zhang</strong><span>University of Manchester</span></li>
-        <li><strong>Xiaonan Ma</strong><span>Washington State University</span></li>
-        <li><strong>Chen Shen</strong><span>Ontario Tech University · co-chair</span></li>
       </ul>
     </section>
 
