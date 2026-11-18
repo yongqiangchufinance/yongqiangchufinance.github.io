@@ -15,6 +15,10 @@ A one-page site, with no build step. All files live in this folder:
 - **R&R status:** put it in the gutter, e.g. `<div class="gutter status">R&amp;R · JFQA</div>`.
 - **New CV:** overwrite `cv.pdf`, then update the month in the CV button text ("November 2026").
 
+## Analytics
+
+`index.html` loads Google Analytics 4 with Measurement ID `G-JDNRJSPR9W` (property 349676933, the same one the old Google Site used). To see only this site in GA4 reports, add a filter or comparison on **Hostname = yongqiangchufinance.github.io**. Outbound clicks (SSRN, audio) and file downloads (`cv.pdf`) are tracked through GA4's enhanced measurement.
+
 ## Hosting options
 
 1. **GitHub Pages (recommended, free).** Create a repo named `<username>.github.io`, upload these files, and the site is live at `https://<username>.github.io`. You can point a custom domain such as `yongqiangchu.com` at it.
