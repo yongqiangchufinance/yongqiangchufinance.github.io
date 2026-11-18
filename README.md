@@ -6,7 +6,7 @@ A one-page site, with no build step. All files live in this folder:
 |--------------|----------------------------------------------------------------------------|
 | `index.html` | The whole site: content, styles, and the small paper-filter script         |
 | `cv.pdf`     | Compiled from `Apps/Overleaf/CV/cv_chu.tex` (November 18, 2026)            |
-| `photo.jpg`  | **Add this.** Your headshot, portrait crop, about 800×1000 px. Until it exists, a "YC" monogram shows. |
+| `photo.jpg`  | Headshot, cropped to 4:5 (367×459 px) from `Non-Research/Other Documents/dr_chu_headshot.jpg`. A larger original (800 px wide or more) would look sharper on high-resolution screens. |
 
 ## Updating
 
